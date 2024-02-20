@@ -1,13 +1,20 @@
 import { useState } from 'react';
 import './App.css'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { Home, Login, Register, About, Contact } from './pages';
 
 function App() {
 
-
   return (
-    <>
-      <h1>ReactJS App</h1>
-    </>
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/login' element={<Login />} />
+        <Route path='/register' element={<Register />} />
+        <Route path='/about' element={<About />} />
+        <Route path='/contact' element={<Contact />} />
+      </Routes>
+    </BrowserRouter>
   )
 }
 

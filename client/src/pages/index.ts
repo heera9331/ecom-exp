@@ -1,10 +1,10 @@
 // importing all pages
 
-import home from "./home/home";
-import login from "./login/login";
-import register from "./register/register";
-import contact from "./contact/contact";
-import about from "./about/about";
+import Home from "./home/home";
+import Login from "./login/login";
+import Register from "./register/register";
+import Contact from "./contact/contact";
+import About from "./about/about";
 
 
-export {home, login, register, contact, about};
+export { Home, Login, Register, About, Contact };
