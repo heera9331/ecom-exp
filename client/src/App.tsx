@@ -2,11 +2,13 @@ import './App.css'
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Home, Login, Register, About, Contact, Cart } from './pages';
 import { Header } from './components';
+import Breadcrumbs from './components/Breadcrumb';
 
 function App() {
   return (
     <BrowserRouter>
       <Header />
+      <Breadcrumbs />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/login' element={<Login />} />
