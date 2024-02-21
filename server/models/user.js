@@ -1,16 +1,17 @@
-import mongoose, { mongo } from "mongoose";
+import mongoose from "mongoose";
 
 const userSchema = mongoose.Schema({
-    username :{
+    email :{
         type: String,
         unique: true, 
-        require: true,
+        required: true,
+        lowercase: true,
         trim: true
     },
 
     password:{
         type :String,
-        require : true,
+        required : true,
         trim : true,
         minLength: 8
 
@@ -19,4 +20,4 @@ const userSchema = mongoose.Schema({
 
 const User = mongoose.model("users",userSchema)
 
-export {User}
+export default User
