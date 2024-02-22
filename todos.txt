@@ -2,7 +2,9 @@
 - 23-02-2024 :- controller seller ✅
 - 23-02-2024 :- controller sellor and user testing ✅
 - 23-02-2024 :- controller Order and Product ✅ 
-- 23-02-2024 :- controller Order and Product testing 
+- 23-02-2024 :- controller Product ✅
+ 
 
 ----------------------todo--------------------------
-1. Review feature in the last
+1. Order controller
+2. Review feature in the last
