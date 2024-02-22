@@ -1,4 +1,4 @@
-import { User } from "../models/user.js";
+import  User  from "../models/user.js";
 
 const registerUser = async (req, res, next) => {
   const user = req.body.user;
@@ -10,14 +10,15 @@ const registerUser = async (req, res, next) => {
   let inserted = await User.insertMany([user]);
 
   if (!inserted) {
-    return res.json({ error: "user not found" });
+    return res.json({ error: "user not created" });
   }
 
   return res.json({ user: inserted });
 };
 
 const getUser = async (req, res, next) => {
-  const id = req.body.id || req.params.id;
+  const id = req.body.id || req.query.id;
+  console.log(req.params)
   let user = await User.findOne({ _id: id });
 
   if (!user) {
@@ -59,4 +60,4 @@ const updateUser = async (req, res, next) => {
   return res.json({ user });
 };
 
-export { getUser, getUsers, deleteUser, registerUser };
+export { getUser, getUsers, deleteUser, registerUser, updateUser };

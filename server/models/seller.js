@@ -1,7 +1,6 @@
 import mongoose from "mongoose";
 
 const sellerSchema = mongoose.Schema({
-
   sellerName: {
     type: String,
     required: true,
@@ -29,33 +28,33 @@ const sellerSchema = mongoose.Schema({
     unique: true,
   },
 
- contactNumber: { 
-    type: Number, 
-    unique: true, 
+  contactNumber: {
+    type: Number,
+    unique: true,
     trim: true,
     validate: {
-      validator: function(v) {
+      validator: function (v) {
         return /^\d{10}$/.test(v); // Check if the string contains exactly 10 digits
       },
-      message: props => `${props.value} is not a valid 10-digit number!`
+      message: (props) => `${props.value} is not a valid 10-digit number!`,
     },
-    required: true 
+    required: true,
   },
 
-  password:{
-    type : String,
-    minLength : 8,
-    required : true,
-    trim : true,
+  password: {
+    type: String,
+    minLength: 8,
+    required: true,
+    trim: true,
   },
 
-  address :{
-    type : String,
-    required : true,
-    trim : true
-  }
+  address: {
+    type: String,
+    required: true,
+    trim: true,
+  },
 });
 
-const Seller = mongoose.model("seller",sellerSchema)
+const Seller = mongoose.model("seller", sellerSchema);
 
-export default Seller
+export default Seller;
