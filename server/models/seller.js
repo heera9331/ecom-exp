@@ -53,7 +53,8 @@ const sellerSchema = mongoose.Schema({
     required: true,
     trim: true,
   },
-});
+},  { timestamps: true }
+);
 
 const Seller = mongoose.model("seller", sellerSchema);
 

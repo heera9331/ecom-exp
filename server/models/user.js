@@ -16,7 +16,8 @@ const userSchema = mongoose.Schema({
         minLength: 8
 
     }
-})
+},  { timestamps: true }
+)
 
 const User = mongoose.model("users",userSchema)
 
