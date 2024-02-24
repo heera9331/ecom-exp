@@ -6,6 +6,7 @@ import {
   registerSeller,
   updateSeller,
 } from "../controllers/seller.js";
+
 import { sellerExist } from "../middlewares/seller.js";
 
 const seller = Router();
