@@ -3,9 +3,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Home, Login, Register, About, Contact, Cart } from './pages';
 import { Header } from './components';
 import Breadcrumbs from './components/Breadcrumb';
+import ColourTheme from './components/ColourTheme';
 
 function App() {
   return (
+    <>
     <BrowserRouter>
       <Header />
       <Breadcrumbs />
@@ -18,6 +20,8 @@ function App() {
         <Route path='/cart' element={<Cart />} />
       </Routes>
     </BrowserRouter>
+    <ColourTheme/>
+  </>
   )
 }
 

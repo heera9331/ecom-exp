@@ -18,7 +18,7 @@ const registerUser = async (req, res, next) => {
 
 const getUser = async (req, res, next) => {
   const id = req.body.id || req.query.id;
-  console.log(req.params)
+  // console.log(req.params)
   let user = await User.findOne({ _id: id });
 
   if (!user) {

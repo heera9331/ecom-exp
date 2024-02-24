@@ -9,7 +9,7 @@ const Header = () => {
       <input
         type="search"
         placeholder="Search here..."
-        className="py-1 px-2 border border-black border-opacity-25 rounded-sm"
+        className="py-1 px-2 border border-black border-opacity-25 rounded-sm "
       />
       <ul className="flex items-center justify-center gap-2">
         <li>

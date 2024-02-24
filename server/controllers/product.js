@@ -35,6 +35,7 @@ const getProduct = async (req, res, next) => {
     return res.status(500).json({ error: "internal server error" });
   }
 };
+
 const getProducts = async (req, res, next) => {
   try {
     let products = await Product.find({});
