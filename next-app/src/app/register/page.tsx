@@ -12,7 +12,7 @@ function Page() {
 
     return (
         <div className="flex flex-col items-center justify-center h-screen gap-4">
-            <h1 className="text-2xl font-semibold">Login</h1>
+            <h1 className="text-2xl font-semibold">Register</h1>
             <div className="w-[400px] h-[300px] bg-gray-100 p-2 border border-black border-opacity-25 rounded-sm flex flex-col gap-2">
                 {/* Content of the second div */}
                 <Input
@@ -37,11 +37,11 @@ function Page() {
                 />
 
                 <div className="flex flex-col gap-2 items-center justify-center">
-                    <p className="text-left">Don't have an account
-                        <Link href={'register'} className="px-2 font-bold">
+                    <p className="text-left">Already have an account
+                        <Link href={'login'} className="px-2 font-bold">
                             click
                         </Link>
-                        to create? </p>
+                        to login? </p>
                     <Button
                         text="Login"
                         onClick={(e: any) => {

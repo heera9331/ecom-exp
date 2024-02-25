@@ -4,35 +4,35 @@ import { FormEvent, useState } from "react";
 import Link from "next/link";
 
 function Page() {
-    const [user, setUser] = useState({ email: "", password: '' });
+    const [seller, setSeller] = useState({ email: "", password: '' });
 
     const handleLogin = () => {
-        console.log(user);
+        console.log(seller);
     }
 
     return (
         <div className="flex flex-col items-center justify-center h-screen gap-4">
-            <h1 className="text-2xl font-semibold">Login</h1>
+            <h1 className="text-2xl font-semibold">Seller Login</h1>
             <div className="w-[400px] h-[300px] bg-gray-100 p-2 border border-black border-opacity-25 rounded-sm flex flex-col gap-2">
                 {/* Content of the second div */}
                 <Input
                     label="Email"
                     htmlFor="email"
                     placeholder="Enter email here..."
-                    value={user.email}
+                    value={seller.email}
                     type="text"
                     onChange={(e: any) => {
-                        setUser({ ...user, email: e.target.value })
+                        setSeller({ ...seller, email: e.target.value })
                     }}
                 />
                 <Input
                     label="Password"
                     htmlFor="password"
                     placeholder="Enter password here..."
-                    value={user.password}
+                    value={seller.password}
                     type="text"
                     onChange={(e: any) => {
-                        setUser({ ...user, password: e.target.value })
+                        setSeller({ ...seller, password: e.target.value })
                     }}
                 />
 
