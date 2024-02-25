@@ -16,7 +16,7 @@ export default function RootLayout({
     <html lang="en">
       <body >
         <Header />
-        <div className="min-h-[90vh]">
+        <div className="min-h-[90vh] px-4">
           {children}
         </div>
         <Footer />
