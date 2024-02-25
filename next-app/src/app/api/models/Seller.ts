@@ -56,6 +56,6 @@ const sellerSchema = new mongoose.Schema({
 },  { timestamps: true }
 );
 
-const Seller = mongoose.model("seller", sellerSchema);
+const Seller = mongoose.models.seller || mongoose.model("seller", sellerSchema);
 
 export default Seller;

@@ -17,7 +17,9 @@ function Page() {
     const addNow = async () => {
         console.log(product);
         let res = await axios.post('/api/products', { product });
-        console.log(res);
+
+        let data = await res.data;
+        console.log(data);
     }
 
     return (

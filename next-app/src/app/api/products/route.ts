@@ -11,8 +11,10 @@ export const GET = async (req: NextRequest, res: NextResponse) => {
 }
 
 export const POST = async (req: NextRequest, res: NextResponse) => {
-    let product = req.body.product;
-    console.log(product);
+    req = await req.json();
+    let product = req.product;
+    product.sellerId = "65d64189a3d53c3da3097e60";
+    console.log('product', product);
     // todo
     // add seller id in product object
 
@@ -20,6 +22,7 @@ export const POST = async (req: NextRequest, res: NextResponse) => {
         return new NextResponse({ error: "product not found" });
     }
     let ack = await Product.insertMany([product]);
+    console.log(ack);
 
     return new NextRequest({ ack });
 }
