@@ -25,6 +25,9 @@ const Header = () => {
                     <Link href={'/about'} className="bg-white px-2 py-1  border border-black border-opacity-25 rounded-sm">About us</Link>
                 </li>
                 <li>
+                    <Link href={'/seller'} className="bg-white px-2 py-1  border border-black border-opacity-25 rounded-sm">Seller</Link>
+                </li>
+                <li>
                     <Link
                         href={'#'}
                         className="bg-white px-2 py-1  border border-black border-opacity-25 rounded-sm"

@@ -1,10 +1,16 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable no-unused-vars */
 
 import React from "react";
 
 interface InputProps {
-    label: string, htmlFor: string, value: any, onChange: (e: React.FormEvent) => void, placeholder?: string, className?: string,
+    label: string,
+    htmlFor: string,
+    value: any,
+    onChange: (e: any) => void,
+    placeholder?: string,
+    className?: string,
+    rows?: number,
+    columns?: number
 }
 
 const TextArea: React.FC<InputProps> = ({
@@ -12,8 +18,9 @@ const TextArea: React.FC<InputProps> = ({
     htmlFor,
     value,
     onChange,
-
     className,
+    rows,
+    columns,
     placeholder,
     ...props
 }) => {
@@ -24,15 +31,16 @@ const TextArea: React.FC<InputProps> = ({
             >
                 {label}
             </label>
-            <input
-                type="textarea"
+            <textarea
                 value={value}
                 className={` p-1 border border-black border-opacity-25 rounded-sm focus: outline-none ${className}`}
                 placeholder={placeholder ? placeholder : ""}
                 name={htmlFor}
                 onChange={onChange}
+                rows={rows ? rows : 5}
+                cols={columns ? columns : 25}
                 {...props}
-                required={true}
+                required
             />
         </div>
     );
