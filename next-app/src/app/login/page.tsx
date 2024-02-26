@@ -1,13 +1,29 @@
 "use client"
+
 import { Button, Input } from "@/components";
 import { FormEvent, useState } from "react";
 import Link from "next/link";
+import axios from "axios";
+import { useRouter } from "next/navigation";
 
 function Page() {
     const [user, setUser] = useState({ email: "", password: '' });
+    const router = useRouter();
 
-    const handleLogin = () => {
+    const handleLogin = async () => {
         console.log(user);
+        let res = await axios.post('/api/auth/login', { user });
+
+        if (res.statusText === 'OK') {
+            res = await res.data;
+            if (!res.error) {
+                router.push('/');
+            } else {
+                alert('Something went wrong');
+            }
+        } else {
+            alert("invalid creadentials");
+        }
     }
 
     return (
@@ -30,7 +46,7 @@ function Page() {
                     htmlFor="password"
                     placeholder="Enter password here..."
                     value={user.password}
-                    type="text"
+                    type="password"
                     onChange={(e: any) => {
                         setUser({ ...user, password: e.target.value })
                     }}
