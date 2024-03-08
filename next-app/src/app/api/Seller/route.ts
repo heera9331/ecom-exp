@@ -1,0 +1,29 @@
+import { NextRequest, NextResponse } from "next/server";
+
+import { Seller } from "../models";
+import { connectDB } from "@/utils";
+
+connectDB()
+
+
+
+export async function POST(req:NextRequest, res:NextResponse){
+
+    const body = await req.json()
+    const {sellerDetails} = body 
+    
+
+    try {
+        const isCreated = await Seller.create(sellerDetails)
+        console.log("isCreated",isCreated)
+        if (isCreated){
+            return Response.json({status:true, msg:"Created Sucessfully", isCreated})
+        }
+        else{
+            return Response.json({status:false, msg:"Creating could not done due to some error"})
+        }
+    } catch (error) {
+        console.log(error)
+        return Response.json({status:false, msg: "Some Error Occured During Creation",error})
+    }
+}
