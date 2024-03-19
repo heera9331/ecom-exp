@@ -6,6 +6,7 @@ import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import Link from "next/link";
 import { signOut, useSession } from "next-auth/react";
 import { useSearchParams } from "next/navigation";
+import Image from "next/image";
 
 const user = {
     name: "Tom Cook",
@@ -45,9 +46,11 @@ export default function Header() {
                                 <div className="flex h-16 items-center justify-between">
                                     <div className="flex items-center">
 
-                                        <div className="">
-                                            <h1 className="text-2xl font-bold text-gray-100">Ecom-Express</h1>
-                                        </div>
+                                        <Link href={"/"}>
+                                            <div className="">
+                                                <h1 className="text-2xl font-bold text-gray-100">Ecom-Express</h1>
+                                            </div>
+                                        </Link>
                                         <div className="hidden md:block">
                                             <div className="ml-10 flex items-baseline space-x-4">
                                                 {navigation.map((item) => (
@@ -87,10 +90,12 @@ export default function Header() {
                                                     <Menu.Button className="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
                                                         <span className="absolute -inset-1.5" />
                                                         <span className="sr-only">Open user menu</span>
-                                                        <img
+                                                        <Image
                                                             className="h-8 w-8 rounded-full"
                                                             src={user.imageUrl}
                                                             alt=""
+                                                            width={"1000"}
+                                                            height={"1000"}
                                                         />
                                                     </Menu.Button>
                                                 </div>
@@ -155,10 +160,12 @@ export default function Header() {
                                 <div className="border-t border-gray-700 pb-3 pt-4">
                                     <div className="flex items-center px-5">
                                         <div className="flex-shrink-0">
-                                            <img
+                                            <Image
                                                 className="h-10 w-10 rounded-full"
                                                 src={user.imageUrl}
                                                 alt="user profile image"
+                                                width={"1000"}
+                                                height={"1000"}
                                             />
                                         </div>
                                         <div className="ml-3">

@@ -15,13 +15,16 @@ export default async function Home() {
 
   return (
     <div>
-      <div>
+      <div className="text-center">
         <h1>
-          Product Page
+          Our Products
         </h1>
       </div>
-      <div>
-        <h2>{dataArray.map((item:any)=> <div key={item._id}><Card imageUrl={item.imageUrl} buyPrice={item.buyPrice} name={item.name} description={item.description} msrp={item.msrp}/></div>)}</h2>
+      <div className=" flex justify-center items-center py-5 border-2 border-blue-500">
+        
+        <div className="w-4/5 m-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 border-2 border-red-500">
+          {dataArray.map((item:Product)=> <div key={item._id}><Card _id={item._id} imageUrl={item.imageUrl} buyPrice={item.buyPrice} name={item.name} description={item.description} msrp={item.msrp}/></div>)}
+        </div>
       </div>
     </div>
   );
