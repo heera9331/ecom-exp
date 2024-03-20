@@ -2,7 +2,7 @@ import React from "react";
 // className is optional
 
 interface buttonProps {
-    text: string, className?: string, onClick: (e: any) => void
+    text: string, className?: string, onClick?: (e: any) => void
 }
 
 const Button: React.FC<buttonProps> = ({ text, className, onClick, ...props }: buttonProps) => {

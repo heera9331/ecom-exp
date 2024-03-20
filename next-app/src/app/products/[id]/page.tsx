@@ -1,4 +1,5 @@
 "use-client"
+import Button from '@/components/Button'
 import axios from 'axios'
 import Image from 'next/image'
 // import React from 'react'
@@ -23,32 +24,38 @@ export default async function SingleProduct({params}:{params:{id:string}}){
         return "NotFound"
     }
     console.log(product)
-  return (
+    const{name,imageUrl,description, msrp, buyPrice} = product
+    
+    return (
     <>
     <div>
         <h1>Single Product Page</h1>
 
-        <div className='max-w-96'>
-            <h1>{product.name}</h1>
+        <div className='w-full border-2  justify-around flex '>
             <div className='w-fit rounded-md h-96'>
                 <Image
-                src={product.imageUrl}
-                alt={product.name}
+                src={imageUrl}
+                alt={name}
                 width={"1000"}
                 height={"1000"}
                 className='w-full h-full object-contain rounded-md border-2'
                 />
+                <div className='mt-6 flex justify-between items-center'>
+                    <Button text='Buy Now' />
+                    <Button text = "Add to cart"/>
+                </div>
             </div>
+            <div className='border-2'>
+                <h1 className='text-6xl font-medium '>{name}</h1>
+        
+                <div className='mt-10'><p>{description}</p></div>
+                <div className='mt-40'>
+                    <p>msrp :- {msrp}</p>
+                    <p>Buy @ just {buyPrice}</p>
 
-            <p>{product.description}</p>
-            <div>
-                <p>msrp :- {product.msrp}</p>
-                <p>Buy @ just {product.buyPrice}</p>
-
+                </div>
             </div>
         </div>
-
-
     </div>
     </>
   )
