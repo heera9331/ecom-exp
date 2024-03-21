@@ -16,7 +16,8 @@ const user = {
 };
 
 const navigation = [
-    { name: "Home", href: "/home", current: true },
+    { name: "Home", href: "/", current: true },
+    { name: "Products", href: "/products", current: false },
     { name: "Seller", href: "/seller", current: false },
     { name: "About", href: "/about", current: false },
     { name: "Contact", href: "/contact", current: false },
@@ -29,7 +30,7 @@ const userNavigation = [
     { name: 'Sign out', href: '#' },
 ]
 
-function classNames(...classes) {
+function classNames(...classes: any) {
     return classes.filter(Boolean).join(" ");
 }
 
@@ -82,36 +83,6 @@ export default function Header() {
                                                 <span className="sr-only">View notifications</span>
                                                 <BellIcon className="h-6 w-6" aria-hidden="true" />
                                             </button>
-
-
-                                            {/* Profile dropdown */}
-                                            <Menu as="div" className="relative ml-3">
-                                                <div>
-                                                    <Menu.Button className="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-                                                        <span className="absolute -inset-1.5" />
-                                                        <span className="sr-only">Open user menu</span>
-                                                        <Image
-                                                            className="h-8 w-8 rounded-full"
-                                                            src={user.imageUrl}
-                                                            alt=""
-                                                            width={"1000"}
-                                                            height={"1000"}
-                                                        />
-                                                    </Menu.Button>
-                                                </div>
-                                                <Transition
-                                                    as={Fragment}
-                                                    enter="transition ease-out duration-100"
-                                                    enterFrom="transform opacity-0 scale-95"
-                                                    enterTo="transform opacity-100 scale-100"
-                                                    leave="transition ease-in duration-75"
-                                                    leaveFrom="transform opacity-100 scale-100"
-                                                    leaveTo="transform opacity-0 scale-95"
-                                                >
-
-
-                                                </Transition>
-                                            </Menu>
                                         </div>
                                     </div>
                                     <div className="-mr-2 flex md:hidden">
