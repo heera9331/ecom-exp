@@ -2,6 +2,8 @@
 import { Fragment, useEffect } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
+import { useDispatch } from "react-redux";
+import {useState} from "react";
 
 import Link from "next/link";
 import { signOut, useSession } from "next-auth/react";
@@ -35,7 +37,12 @@ function classNames(...classes: any) {
 }
 
 export default function Header() {
-
+    const [query, setQuery] = useState("");
+    const dispatch = useDispatch();
+    
+    const handleSearch = () => {
+        console.log(dispatch);
+    }
 
     return (
         <>
@@ -43,15 +50,34 @@ export default function Header() {
                 <Disclosure as="nav" className="bg-gray-800">
                     {({ open }) => (
                         <>
-                            <div className="mx-auto px-2">
+                            <div className="flex items-center justify-between mx-auto px-2">
+                                <div className="flex gap-1 items-center">
+                                    <Link href={"/"}>
+                                        <div className="">
+                                            <h1 className="text-xl md:text-2xl font-bold text-gray-100 ">Ecom-Express</h1>
+                                        </div>
+                                    </Link>
+
+                                </div>
+                                <div>
+                                    <label htmlFor="query"></label>
+                                    <input type="text" name="query" placeholder="LG tv"
+                                        className="lg:min-w-[500px] py-1 px-2 rounded-md outline-none focus:bg-gray-100"
+                                        value={query}
+                                        onChange={(e)=>{
+                                            setQuery(e.target.value);
+                                        }}
+                                    />
+                                    <button 
+                                        className="bg-gray-800 py-1 px-2 text-white outline-none"
+                                        onClick={handleSearch}
+                                    >
+                                        Search
+                                    </button>
+                                </div>
                                 <div className="flex h-16 items-center justify-between">
                                     <div className="flex items-center">
 
-                                        <Link href={"/"}>
-                                            <div className="">
-                                                <h1 className="text-2xl font-bold text-gray-100">Ecom-Express</h1>
-                                            </div>
-                                        </Link>
                                         <div className="hidden md:block">
                                             <div className="ml-10 flex items-baseline space-x-4">
                                                 {navigation.map((item) => (
