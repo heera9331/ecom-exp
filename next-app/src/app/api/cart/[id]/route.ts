@@ -1,8 +1,8 @@
 import { Cart } from "@/app/api/models";
-import { NextRequest } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { connectDB } from "@/utils"
 
-export const GET = async (req: NextRequest, { params: { id } }: { params: any }) => {
+export const GET = async (req: NextRequest, { params: { id } }: { params:{id:string} }) => {
     await connectDB();
     let customerId = id;
     if (!customerId) {
@@ -12,7 +12,7 @@ export const GET = async (req: NextRequest, { params: { id } }: { params: any })
         let user = await Cart.findOne({ customerId: customerId });
         return NextResponse.json(user);
     } catch (eror) {
-        return NextResponse.json(error: "database error");
+        return NextResponse.json({error: "database error"});
     }
 
 }
