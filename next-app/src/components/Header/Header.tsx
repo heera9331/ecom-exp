@@ -81,41 +81,7 @@ export default function Header() {
                                                 <span className="absolute -inset-1.5" />
                                                 <span className="sr-only">View notifications</span>
                                                 <BellIcon className="h-6 w-6" aria-hidden="true" />
-<<<<<<< HEAD
                                             </button> 
-=======
-                                            </button>
-
-
-                                            {/* Profile dropdown */}
-                                            <Menu as="div" className="relative ml-3">
-                                                <div>
-                                                    <Menu.Button className="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800">
-                                                        <span className="absolute -inset-1.5" />
-                                                        <span className="sr-only">Open user menu</span>
-                                                        <Image
-                                                            className="h-8 w-8 rounded-full"
-                                                            src={user.imageUrl}
-                                                            alt=""
-                                                            width={"1000"}
-                                                            height={"1000"}
-                                                        />
-                                                    </Menu.Button>
-                                                </div>
-                                                <Transition
-                                                    as={Fragment}
-                                                    enter="transition ease-out duration-100"
-                                                    enterFrom="transform opacity-0 scale-95"
-                                                    enterTo="transform opacity-100 scale-100"
-                                                    leave="transition ease-in duration-75"
-                                                    leaveFrom="transform opacity-100 scale-100"
-                                                    leaveTo="transform opacity-0 scale-95"
-                                                >
-
-
-                                                </Transition>
-                                            </Menu>
->>>>>>> 6a51d3e70bc060cec790a77f2d6d8b7035cf6673
                                         </div>
                                     </div>
                                     <div className="-mr-2 flex md:hidden">
