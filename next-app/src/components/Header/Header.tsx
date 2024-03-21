@@ -17,6 +17,7 @@ const user = {
 
 const navigation = [
     { name: "Home", href: "/", current: true },
+    { name: "Products", href: "/products", current: false },
     { name: "Seller", href: "/seller", current: false },
     { name: "About", href: "/about", current: false },
     { name: "Contact", href: "/contact", current: false },
@@ -29,7 +30,7 @@ const userNavigation = [
     { name: 'Sign out', href: '#' },
 ]
 
-function classNames(...classes:any) {
+function classNames(...classes: any) {
     return classes.filter(Boolean).join(" ");
 }
 
@@ -81,7 +82,7 @@ export default function Header() {
                                                 <span className="absolute -inset-1.5" />
                                                 <span className="sr-only">View notifications</span>
                                                 <BellIcon className="h-6 w-6" aria-hidden="true" />
-                                            </button> 
+                                            </button>
                                         </div>
                                     </div>
                                     <div className="-mr-2 flex md:hidden">
