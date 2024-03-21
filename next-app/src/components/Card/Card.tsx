@@ -13,8 +13,8 @@ export interface Product {
 const Card = ({ imageUrl, name, _id, description, buyPrice, msrp }: Product) => {
   return (
     <>
-      <Link href={`/products/${_id}`} className='block border-2 w-full bg-gray-100'>
-        <div className="bg-white">
+      <Link href={`/products/${_id}`} className='block border-2 h-full w-full bg-gray-200 rounded-sm hover:shadow-lg'>
+        <div className="">
           <h2 className="sr-only">Products</h2>
           <div className="w-64 border-2 border-pink-700 p-1">
             <div className="aspect-h-1 aspect-w-1 w-full border-2 border-green-500  overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
