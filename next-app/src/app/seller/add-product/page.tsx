@@ -3,16 +3,17 @@ import { FormEvent, useState } from "react";
 import { TextArea, Button, Input } from "@/components";
 import axios from "axios";
 
+const initialState = {
+    name: "",
+    description: "",
+    file: "",
+    imageUrl: "",
+    quantity: 0,
+    msrp: 0,
+    buyPrice: 0,
+}
 function Page() {
-    const [product, setProduct] = useState({
-        name: "",
-        description: "",
-        file: "",
-        imageUrl: "",
-        quantity: 0,
-        msrp: 0,
-        buyPrice: 0,
-    });
+    const [product, setProduct] = useState(initialState);
 
     const addNow = async () => {
         console.log(product);
@@ -20,6 +21,8 @@ function Page() {
 
         let data = await res.data;
         console.log(data);
+        setProduct(initialState)
+        alert("Successfully added product")
     }
 
     return (
