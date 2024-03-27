@@ -13,21 +13,23 @@ export interface Product {
 const Card = ({ imageUrl, name, _id, description, buyPrice, msrp }: Product) => {
   return (
     <>
-      <Link href={`/products/${_id}`} className='block border-2 h-full w-full bg-gray-200 rounded-sm hover:shadow-lg'>
+      <Link href={`/products/${_id}`} className='border-2 h-[500px] w-full bg-white rounded-md hover:shadow-lg flex justify-stretch p-6 hover:scale-[1.01] relative'>
         <div className="">
           <h2 className="sr-only">Products</h2>
-          <div className="w-64 border-2 border-pink-700 p-1">
-            <div className="aspect-h-1 aspect-w-1 w-full border-2 border-green-500  overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+          <div className="w-64 p-1">
+            <div className="h-[350px]">
               <Image
                 src={imageUrl}
                 alt={name}
                 width="1000"
                 height="1000"
-                className=" object-cover  group-hover:opacity-75"
+                className=" object-cover  group-hover:opacity-75 h-full"
               />
             </div>
-            <h3 className="mt-4 text-sm text-gray-700">{name}</h3>
-            <p className="mt-1 text-lg font-medium text-gray-900">{buyPrice}</p>
+            <div className='absolute bottom-0 border-t-2 w-full pt-[-30px]'>
+              <h3 className="mt-4 text-sm text-gray-700">{name}</h3>
+              <p className="mt-1 text-lg font-medium text-gray-900">{buyPrice}</p>
+            </div>
           </div>
         </div>
       </Link>

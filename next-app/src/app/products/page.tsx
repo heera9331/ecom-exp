@@ -14,10 +14,10 @@ export default async function Home() {
 
 
   return (
-    <div>
-      <h1 className="font-semibold text-2xl">Our Products</h1>
-      <div className=" flex justify-center items-center py-5 border-2 border-blue-500">
-        <div className="w-4/5 m-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 border-2 border-red-500">
+    <div className="bg-gray-200 px-2 py-4">
+      <h1 className="font-semibold text-3xl">Our Products</h1>
+      <div className="flex py-5 border-2">
+        <div className="flex flex-wrap gap-2">
           {dataArray && dataArray.map((item: Product) =>
             <div key={item._id}>
               {/* render card when image url avaiable */}
