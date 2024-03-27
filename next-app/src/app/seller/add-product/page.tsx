@@ -26,9 +26,9 @@ function Page() {
     }
 
     return (
-        <div className="flex flex-col items-center justify-center h-screen gap-4">
+        <div className="my-20 flex flex-col items-center justify-center h-screen gap-4">
             <h1 className="text-2xl font-semibold">Enter product details here...</h1>
-            <div className="w-[500px] h-[650px] bg-gray-100 p-2 border border-black border-opacity-25 rounded-sm flex flex-col">
+            <div className="w-[500px] min-h-[650px] bg-gray-100 p-2 border border-black border-opacity-25 rounded-sm flex flex-col">
                 {/* Content of the second div */}
                 <Input
                     label="Name"
