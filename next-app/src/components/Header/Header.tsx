@@ -3,7 +3,7 @@ import { Fragment, useEffect } from "react";
 import { Disclosure, Menu, Transition } from "@headlessui/react";
 import { Bars3Icon, BellIcon, XMarkIcon } from "@heroicons/react/24/outline";
 import { useDispatch } from "react-redux";
-import {useState} from "react";
+import { useState } from "react";
 
 import Link from "next/link";
 import { signOut, useSession } from "next-auth/react";
@@ -39,7 +39,7 @@ function classNames(...classes: any) {
 export default function Header() {
     const [query, setQuery] = useState("");
     const dispatch = useDispatch();
-    
+
     const handleSearch = () => {
         console.log(dispatch);
     }
@@ -62,13 +62,13 @@ export default function Header() {
                                 <div>
                                     <label htmlFor="query"></label>
                                     <input type="text" name="query" placeholder="LG tv"
-                                        className="lg:min-w-[500px] py-1 px-2 rounded-md outline-none focus:bg-gray-100"
+                                        className="lg:min-w-[300px] py-1 px-2 rounded-md outline-none focus:bg-gray-100"
                                         value={query}
-                                        onChange={(e)=>{
+                                        onChange={(e) => {
                                             setQuery(e.target.value);
                                         }}
                                     />
-                                    <button 
+                                    <button
                                         className="bg-gray-800 py-1 px-2 text-white outline-none"
                                         onClick={handleSearch}
                                     >
