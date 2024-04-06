@@ -1,17 +1,28 @@
 "use client"
 
+import { Button } from "@/components";
+import { signOut } from "next-auth/react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
+<<<<<<< HEAD
 export default function Page(props:any) {
 
     const links = [
         { path: "/", title: "Main Page" },
         { path: "/", title: "Home Page" },
         { path: "/login", title: "Login" },
+=======
+export default function Page(props) {
+    const router = useRouter()
+    const links = [
+        { path: "/", title: "Main Page" },
+        { path: "/signin", title: "Login" },
+>>>>>>> 95bda21365807c203ce302db746d551a670b796b
         { path: "/contact", title: "Contact us" },
         { path: "/about", title: "About us" },
         { path: "/sitemap", title: "SiteMap" },
-        { path: "/logout", title: "Logout" }
+        // { path: "/logout", title: "Logout" }
     ]
 
     return (
@@ -70,6 +81,12 @@ export default function Page(props:any) {
                     >
                         Cart
                     </Link>
+                </div>
+                <div>
+                    <Button text="Logout" onClick={async()=>{
+                        await signOut()
+                        router.push("/signin")
+                    }}/>
                 </div>
             </div>
 

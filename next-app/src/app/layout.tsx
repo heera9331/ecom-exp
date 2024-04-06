@@ -4,7 +4,7 @@ import "./globals.css";
 import { Footer, Header } from "@/components/index";
 import { store } from "@/redux/store/store";
 import { Provider } from "react-redux";
-
+import { SessionProvider } from "next-auth/react";
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -13,6 +13,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body >
+        <SessionProvider>
         <Provider store={store}>
           <Header />
           <div className="min-h-[90vh] px-4">
@@ -20,6 +21,7 @@ export default function RootLayout({
           </div>
           <Footer />
         </Provider>,
+        </SessionProvider>
       </body>
     </html>
   );

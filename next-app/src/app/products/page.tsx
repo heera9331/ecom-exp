@@ -12,7 +12,7 @@ const fetchData = async () => {
 
 export default async function Home() {
   const dataArray = await fetchData()
-  console.log(dataArray)
+  // console.log(dataArray)
 
 
   return (
