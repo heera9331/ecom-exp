@@ -6,7 +6,7 @@ export default function Page(props:any) {
 
     const links = [
         { path: "/", title: "Main Page" },
-        { path: "/home", title: "Home Page" },
+        { path: "/", title: "Home Page" },
         { path: "/login", title: "Login" },
         { path: "/contact", title: "Contact us" },
         { path: "/about", title: "About us" },
