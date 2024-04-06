@@ -2,10 +2,11 @@
 
 import Link from "next/link";
 
-export default function Page(props) {
+export default function Page(props:any) {
 
     const links = [
         { path: "/", title: "Main Page" },
+        { path: "/home", title: "Home Page" },
         { path: "/login", title: "Login" },
         { path: "/contact", title: "Contact us" },
         { path: "/about", title: "About us" },
