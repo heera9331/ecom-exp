@@ -22,12 +22,13 @@ export const PUT = async (req: NextRequest, { params: { id } }: { params:{id:str
     let customerId = id;
     const body = await req.json()
     const {newQuantity,productId} = body
+    // console.log(newQuantity,productId," from add to cart api")
     if (!customerId) {
         return NextResponse.json({ error: "customer id is not found" });
     }
     try {
         let user = await Cart.findOneAndUpdate({ customerId: customerId , "products.productId":productId },
-                                                {$set:{"products.$.quantity":newQuantity}},{new:true});
+                                                {$set:{"products.$.quantity":newQuantity}},{new:true,upsert:true});
         return NextResponse.json(user);
     } catch (error:any) {
         return NextResponse.json({error: "database error",msg:error.message});

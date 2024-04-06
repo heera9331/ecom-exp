@@ -3,29 +3,35 @@
 import { Button, Input } from "@/components";
 import { FormEvent, useState } from "react";
 import Link from "next/link";
-import axios from "axios";
+// import axios from "axios";
 import { useRouter } from "next/navigation";
-
+import { useSession } from "next-auth/react";
+import { signIn } from "next-auth/react";
 function Page() {
     const [user, setUser] = useState({ email: "", password: '' });
     const router = useRouter();
+    const {data,status} = useSession()
+    
 
     const handleLogin = async () => {
         console.log(user);
-        let res = await axios.post('/api/auth/login', { user });
+        await signIn("credentials",user)
+        // let res = await axios.post('/api/auth/login', { user });
 
-        if (res.statusText === 'OK') {
-            res = await res.data;
-            if (!res.error) {
-                router.push('/');
-            } else {
-                alert('Something went wrong');
-            }
-        } else {
-            alert("invalid creadentials");
-        }
+        // if (res.statusText === 'OK') {
+        //     res = await res.data;
+        //     if (!res.error) {
+        //         router.push('/');
+        //     } else {
+        //         alert('Something went wrong');
+        //     }
+        // } else {
+        //     alert("invalid creadentials");
+        // }
     }
-
+    if (status=="authenticated"){
+        router.push('/')
+    }
     return (
         <div className="flex flex-col items-center justify-center h-screen gap-4">
             <h1 className="text-2xl font-semibold">Login</h1>

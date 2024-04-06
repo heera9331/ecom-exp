@@ -24,7 +24,7 @@ export default async function SingleProduct({ params }: { params: { id: string }
     if (!product) {
         return "NotFound"
     }
-    console.log(product)
+    // console.log(product)
     const { name, imageUrl, description, msrp, buyPrice } = product
 
     return (

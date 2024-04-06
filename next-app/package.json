@@ -15,7 +15,7 @@
     "axios": "^1.6.7",
     "mongoose": "^8.2.0",
     "next": "14.1.0",
-    "next-auth": "^4.24.6",
+    "next-auth": "^4.24.7",
     "react": "^18",
     "react-dom": "^18",
     "react-redux": "^9.1.0"
