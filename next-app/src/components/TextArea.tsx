@@ -36,7 +36,7 @@ const TextArea: React.FC<InputProps> = ({
                 className={` p-1 border border-black border-opacity-25 rounded-sm focus: outline-none ${className}`}
                 placeholder={placeholder ? placeholder : ""}
                 name={htmlFor}
-                onChange={onChange}
+                onChange={()=>{onChange(e)}}
                 rows={rows ? rows : 5}
                 cols={columns ? columns : 25}
                 {...props}
