@@ -41,7 +41,7 @@ export default function Header() {
     const dispatch = useDispatch();
 
     const handleSearch = () => {
-        console.log(dispatch);
+        // console.log(dispatch);
     }
 
     return (

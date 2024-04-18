@@ -3,20 +3,21 @@ import { parse } from "url";
 import { User } from "../models";
 import { connectDB } from "@/utils";
 
-connectDB()
+
 
 
 
 
 export async function POST(req:NextRequest, res:NextResponse){
 
+    await connectDB()
     const body = await req.json()
     const {userDetails} = body 
     
 
     try {
         const isCreated = await User.create(userDetails)
-        console.log("isCreated",isCreated)
+        // console.log("isCreated",isCreated)
         if (isCreated){
             return Response.json({status:true, msg:"Created Sucessfully", isCreated})
         }

@@ -11,20 +11,16 @@ providers: [
     id:"credentials",
 
     credentials: {
-      username: { label: "Username", type: "text", placeholder: "jsmith" },
+      email: { label: "Email", type: "text", placeholder: "Enter your email" },
       password: { label: "Password", type: "password", placeholder:"password" }
     },
     async authorize(credentials, req) {
         try {
             await connectDB()
-            console.log(credentials)
-            const user = await User.findOne({email:credentials.email,password:credentials.password})
-
-            console.log("credentials from auth", credentials)
-            console.log("user from ",user)
+            const user = await User.findOne({email:credentials?.email,password:credentials?.password})
             // If no error and we have user data, return it
           if ( user) {
-            // console.log("user from ",user)
+
             return user
           }
           else{
@@ -35,9 +31,21 @@ providers: [
         }
         
     },
-    credentials : undefined
   })
 ],
+pages:{
+  signIn: '/src/app/signin',  
+},
+callbacks:{
+  async jwt({token,user}) {
+    return token
+  },
+  async session({token,session,user}) {
+    return session
+  },
+},
+session:{strategy:"jwt"}
+
 
 })
 

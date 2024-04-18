@@ -20,7 +20,7 @@ function Page() {
         let res = await axios.post('/api/products', { product });
 
         let data = await res.data;
-        console.log(data);
+        // console.log(data);
         setProduct(initialState)
         alert("Successfully added product")
     }

@@ -1,5 +1,8 @@
 import mongoose from "mongoose";
 
+
+
+
 const productSchema = new mongoose.Schema(
     {
         name: {
@@ -43,6 +46,13 @@ const productSchema = new mongoose.Schema(
             ref: "seller",
             required: true,
         },
+        // category:{
+        //     type: String,
+        //     required: true,
+        // },
+        // tags: {
+        //     type: mongoose.Types.Array<String>
+        // }
     },
     { timestamps: true }
 );

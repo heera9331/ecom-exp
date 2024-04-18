@@ -5,8 +5,8 @@ import { connectDB } from "@/utils"
 connectDB();
 
 
-export const POST = async (req: NextRequest, res: NextResponse) => {
-    req = await req.json();
+export const POST = async (request: NextRequest, res: NextResponse) => {
+    const req = await request.json();
     console.log(req)
     let user: { email: String, password: String } = req.user;
 

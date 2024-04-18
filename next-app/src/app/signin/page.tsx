@@ -8,26 +8,17 @@ import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 import { signIn } from "next-auth/react";
 
+
 function Page(props:any) {
     const [user, setUser] = useState({ email: "chauhanyogesh950@gmail.com", password: 'Yogesh@123' });
     const router = useRouter();
     const {data, status} = useSession()
 
     const handleLogin = async () => {
-        console.log(user);
-        await signIn("credentials",user)
-        // let res = await axios.post('/api/auth/login', { user });
+        console.log("From sign in page",user);
 
-        // if (res.statusText === 'OK') {
-        //     res = await res.data;
-        //     if (!res.error) {
-        //         router.push('/');
-        //     } else {
-        //         alert('Something went wrong');
-        //     }
-        // } else {
-        //     alert("invalid creadentials");
-        // }
+        console.log("Sign in running")
+        await signIn("credentials",user)
     }
     
     useEffect(()=>{
@@ -64,7 +55,7 @@ function Page(props:any) {
                 />
 
                 <div className="flex flex-col gap-2 items-center justify-center">
-                    <p className="text-left">Don't have an account
+                    <p className="text-left">Dont have an account
                         <Link href={'register'} className="px-2 font-bold">
                             click
                         </Link>
