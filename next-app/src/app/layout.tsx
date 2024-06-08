@@ -12,11 +12,15 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body >
-        <SessionProvider>
-        <Provider store={store}>
-          <Header />
-          <div className="min-h-[90vh] px-4">
+    <head>
+      <link href="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.snow.css" rel="stylesheet"/>
+      <script defer src="https://cdn.jsdelivr.net/npm/quill@2.0.2/dist/quill.js"></script>
+    </head>
+    <body>
+    <SessionProvider>
+      <Provider store={store}>
+        <Header/>
+          <div className="min-h-[90vh]">
             {children}
           </div>
           <Footer />
